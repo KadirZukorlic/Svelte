@@ -5,23 +5,19 @@
     const id = 'heading'
     const disabled = false
     const status = 'succsess'
-    let isPromoted = true
+    let promoted = true
 </script>
 
 <main>
     <h2 class="underline">underlined text</h2>
     <h2 class={status}>Status</h2>
-    <h2 class={isPromoted ? 'promoted' : ''}>Movie Title</h2>
+    <!-- class:promoted adds `promoted` class if `promoted` variable is true, longer syntax is class:promoted={promoted} -->
+    <h2 class:promoted>Movie Title</h2>
     <h1>Hello {name}!</h1>
     <div>{@html channel}</div>
     <div>{@html hack}</div>
     <h2 {id}>This is a heading</h2>
-    <button
-        {disabled}
-        on:click={() => {
-            return (isPromoted = !isPromoted)
-        }}>Button</button
-    >
+    <button {disabled} on:click={() => (promoted = !promoted)}>Button</button>
 </main>
 
 <style>
@@ -36,6 +32,7 @@
     }
     .promoted {
         font-style: italic;
+        color: sandybrown;
     }
     main {
         text-align: center;
