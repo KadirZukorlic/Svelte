@@ -1,9 +1,31 @@
 <script>
-    let num = 0
+    // let num = 0
+    const names = ['Kadir', 'Amina', 'Hamza', 'Nahla']
+    const fullNames = [
+        {
+            firstName: 'Kadir',
+            lastName: 'Zukorlic',
+        },
+        {
+            firstName: 'Amina',
+            lastName: 'Zukorlic',
+        },
+        {
+            firstName: 'Hamza',
+            lastName: 'Zukorlic',
+        },
+        {
+            firstName: 'Nahla',
+            lastName: 'Zukorlic',
+        },
+    ]
 </script>
 
 <main>
-    {#if Number(num) === 0}
+    {#each fullNames as name, index}
+        <p>{index + 1}. {name.firstName} {name.lastName}</p>
+    {/each}
+    <!-- {#if Number(num) === 0}
         <h2>Number is <span>zero</span></h2>
     {:else if Number(num) < 0}
         <h2>Number is <span>negative</span></h2>
@@ -18,10 +40,13 @@
         <p>input number is: {num}</p>
     {:else}
         <p>yeah</p>
-    {/if}
+    {/if} -->
 </main>
 
 <style>
+    p {
+        color: rgb(161, 91, 91);
+    }
     main {
         text-align: center;
         padding: 1em;
