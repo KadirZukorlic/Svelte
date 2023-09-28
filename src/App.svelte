@@ -1,46 +1,16 @@
 <script>
-    // let num = 0
-    const names = ['Kadir', 'Amina', 'Hamza', 'Nahla']
-    const fullNames = [
-        {
-            firstName: 'Kadir',
-            lastName: 'Zukorlic',
-        },
-        {
-            firstName: 'Amina',
-            lastName: 'Zukorlic',
-        },
-        {
-            firstName: 'Hamza',
-            lastName: 'Zukorlic',
-        },
-        {
-            firstName: 'Nahla',
-            lastName: 'Zukorlic',
-        },
-    ]
+    let count = 0
+    const increase = (e, number) => {
+        console.log(e)
+        // count = count + 1
+        count += number
+    }
 </script>
 
 <main>
-    {#each fullNames as name, index}
-        <p>{index + 1}. {name.firstName} {name.lastName}</p>
-    {/each}
-    <!-- {#if Number(num) === 0}
-        <h2>Number is <span>zero</span></h2>
-    {:else if Number(num) < 0}
-        <h2>Number is <span>negative</span></h2>
-    {:else if Number(num) > 0}
-        <h2>Number is <span>positive</span></h2>
-    {:else}
-        <h2>Not a number</h2>
-    {/if}
-
-    <input type="text" bind:value={num} on:change={(e) => (num = e.target.value)} />
-    {#if num}
-        <p>input number is: {num}</p>
-    {:else}
-        <p>yeah</p>
-    {/if} -->
+    <button on:click={() => (count = count + 1)}>Count {count}</button>
+    <button on:click={(event) => increase(event, 5)}>Count {count}</button>
+    <button on:click={(event) => increase(event, 10)}>Count {count}</button>
 </main>
 
 <style>
