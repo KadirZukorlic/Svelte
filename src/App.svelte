@@ -1,8 +1,19 @@
 <script>
+    import Greet from './components/Greet.svelte'
 
+    const name = 'Kadir'
+    const channel = 'Revolution'
+
+    const obj = {
+        name: 'Hamza',
+        heroName: 'Spider Man',
+    }
 </script>
 
 <main>
+    <Greet {name} heroName={channel} />
+    <Greet {name} />
+    <Greet {...obj} />
 </main>
 
 <style>
