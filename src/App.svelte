@@ -2,6 +2,10 @@
     let firstName = 'Kadir'
     let lastName = 'Zukorlic'
     $: fullName = `${firstName} ${lastName}`
+    $: {
+        const greet = `Full name is: ${firstName} ${lastName}`
+        console.log(greet)
+    }
 
     let items = [
         {
@@ -21,10 +25,22 @@
         },
     ]
     $: totalAmount = items.reduce((acc, curr) => (acc = acc + curr.price), 0)
-    console.log('rendered', items)
+
+    let volume = 0
+    $: if (volume < 0) {
+        alert("Can't go lower")
+        volume = 0
+    } else if (volume > 20) {
+        alert("Can't go higher")
+        volume = 20
+    }
 </script>
 
 <main>
+    <button on:click={() => (volume = volume + 1)}>Increase Volume</button>
+    <button on:click={() => (volume = volume - 1)}>Decrease Volume</button>
+    <h2>current volume {volume}</h2>
+
     <button
         on:click={() => {
             ;(firstName = 'Hamza'), (lastName = 'Zukorlic')
