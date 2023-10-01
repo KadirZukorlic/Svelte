@@ -1,5 +1,6 @@
 <script>
     import Greet from './components/Greet.svelte'
+    import Popup from './components/Popup.svelte'
     import { setContext } from 'svelte'
 
     const name = 'Kadir'
@@ -14,11 +15,23 @@
     setContext('fullNameCtx', {
         fullName,
     })
+
+    let showPopup = false
+
+    const closePopup = (event) => {
+        showPopup = false
+        const { name } = event.detail
+        console.log(name)
+        console.log(event.detail, 'detail from dispatch')
+    }
 </script>
 
 <main>
-    <Greet {name} heroName={channel} />
-    <Greet {name} />
+    <button on:click={() => (showPopup = !showPopup)}>{!showPopup ? 'Show Popup' : 'Hide Popup'}</button>
+
+    {#if showPopup}
+        <Popup on:close={closePopup} />
+    {/if}
     <Greet {...obj} />
 </main>
 
