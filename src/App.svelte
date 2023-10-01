@@ -1,5 +1,6 @@
 <script>
     import Greet from './components/Greet.svelte'
+    import { setContext } from 'svelte'
 
     const name = 'Kadir'
     const channel = 'Revolution'
@@ -8,6 +9,11 @@
         name: 'Hamza',
         heroName: 'Spider Man',
     }
+
+    const fullName = 'Hamza Zukorlic Context'
+    setContext('fullNameCtx', {
+        fullName,
+    })
 </script>
 
 <main>
