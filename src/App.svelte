@@ -1,6 +1,8 @@
 <script>
+    import Outer from './components/Outer.svelte'
     import Greet from './components/Greet.svelte'
     import Popup from './components/Popup.svelte'
+    import Button from './components/Button.svelte'
     import { setContext } from 'svelte'
 
     const name = 'Kadir'
@@ -24,9 +26,15 @@
         console.log(name)
         console.log(event.detail, 'detail from dispatch')
     }
+
+    const handleGreet = (event) => {
+        alert(event.detail)
+    }
 </script>
 
 <main>
+    <Button on:click={() => alert('green button clicked...')}>Click</Button>
+    <Outer on:greet={handleGreet} />
     <button on:click={() => (showPopup = !showPopup)}>{!showPopup ? 'Show Popup' : 'Hide Popup'}</button>
 
     {#if showPopup}
