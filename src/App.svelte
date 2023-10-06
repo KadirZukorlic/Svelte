@@ -1,46 +1,49 @@
 <script>
-    import Outer from './components/Outer.svelte'
-    import Greet from './components/Greet.svelte'
-    import Popup from './components/Popup.svelte'
-    import Button from './components/Button.svelte'
-    import { setContext } from 'svelte'
+    import Card from './components/Card.svelte'
+    // import Outer from './components/Outer.svelte'
+    // import Greet from './components/Greet.svelte'
+    // import Popup from './components/Popup.svelte'
+    // import Button from './components/Button.svelte'
+    // import { setContext } from 'svelte'
 
-    const name = 'Kadir'
-    const channel = 'Revolution'
+    // const name = 'Kadir'
+    // const channel = 'Revolution'
 
-    const obj = {
-        name: 'Hamza',
-        heroName: 'Spider Man',
-    }
+    // const obj = {
+    //     name: 'Hamza',
+    //     heroName: 'Spider Man',
+    // }
 
-    const fullName = 'Hamza Zukorlic Context'
-    setContext('fullNameCtx', {
-        fullName,
-    })
+    // const fullName = 'Hamza Zukorlic Context'
+    // setContext('fullNameCtx', {
+    //     fullName,
+    // })
 
-    let showPopup = false
+    // let showPopup = false
 
-    const closePopup = (event) => {
-        showPopup = false
-        const { name } = event.detail
-        console.log(name)
-        console.log(event.detail, 'detail from dispatch')
-    }
+    // const closePopup = (event) => {
+    //     showPopup = false
+    //     const { name } = event.detail
+    //     console.log(name)
+    //     console.log(event.detail, 'detail from dispatch')
+    // }
 
-    const handleGreet = (event) => {
-        alert(event.detail)
-    }
+    // const handleGreet = (event) => {
+    //     alert(event.detail)
+    // }
 </script>
 
 <main>
-    <Button on:click={() => alert('green button clicked...')}>Click</Button>
+    <Card />
+    <Card><h2>Card Content</h2></Card>
+    <Card><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="card content" /></Card>
+    <!-- <Button on:click={() => alert('green button clicked...')}>Click</Button>
     <Outer on:greet={handleGreet} />
     <button on:click={() => (showPopup = !showPopup)}>{!showPopup ? 'Show Popup' : 'Hide Popup'}</button>
-
     {#if showPopup}
         <Popup on:close={closePopup} />
     {/if}
-    <Greet {...obj} />
+    <Greet {...obj} /> -->
 </main>
 
 <style>
