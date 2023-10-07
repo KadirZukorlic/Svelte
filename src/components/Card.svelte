@@ -1,4 +1,11 @@
-<div class="card"><slot>Default content</slot></div>
+<div class="card">
+    <div class="card-header"><slot name="header" /></div>
+    <div class="card-content"><slot name="content">Default content</slot></div>
+    {#if $$slots.footer}
+        <hr />
+        <div class="card-footer"><slot name="footer" /></div>
+    {/if}
+</div>
 
 <style>
     .card {
@@ -12,7 +19,7 @@
 
     .card:hover {
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        transform: rotate(360deg);
+        transform: scale(1.1);
         transition-duration: 0.6s;
     }
 </style>

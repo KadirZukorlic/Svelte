@@ -3,7 +3,8 @@
     // import Outer from './components/Outer.svelte'
     // import Greet from './components/Greet.svelte'
     // import Popup from './components/Popup.svelte'
-    // import Button from './components/Button.svelte'
+    import Button from './components/Button.svelte'
+    import NameList from './components/NameList.svelte'
     // import { setContext } from 'svelte'
 
     // const name = 'Kadir'
@@ -34,9 +35,19 @@
 </script>
 
 <main>
+    <NameList><h3 slot="hero" let:firstName let:lastName>{firstName} {lastName}</h3></NameList>
+    <NameList><h3 slot="hero" let:firstName let:lastName>{lastName}, {firstName}</h3></NameList>
+    <NameList><h3 slot="hero" let:firstName>{firstName}</h3></NameList>
     <Card />
     <Card><h2>Card Content</h2></Card>
     <Card><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="card content" /></Card>
+    <Card
+        ><div slot="header"><h3>Header</h3></div>
+        <div slot="content">
+            <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="card content" />
+        </div>
+        <!-- <div slot="footer"><Button>View details</Button></div> -->
+    </Card>
     <!-- <Button on:click={() => alert('green button clicked...')}>Click</Button>
     <Outer on:greet={handleGreet} />
     <button on:click={() => (showPopup = !showPopup)}>{!showPopup ? 'Show Popup' : 'Hide Popup'}</button>
