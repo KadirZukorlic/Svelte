@@ -1,12 +1,9 @@
 <script>
-    import ChildStyles from './components/ChildStyles.svelte'
+    import PostList from './components/PostList.svelte'
 </script>
 
 <main>
-    <h3>App Component Global Styles</h3>
-    <h4>App Component text</h4>
-    <h3>ChildStyles Component Global Styles</h3>
-    <ChildStyles />
+    <PostList />
 </main>
 
 <style>
