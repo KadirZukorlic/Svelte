@@ -1,9 +1,18 @@
 <script>
+    import ChildStyles from './components/ChildStyles.svelte'
 </script>
 
-<main />
+<main>
+    <h3>App Component Global Styles</h3>
+    <h4>App Component text</h4>
+    <h3>ChildStyles Component Global Styles</h3>
+    <ChildStyles />
+</main>
 
 <style>
+    h4 {
+        color: orange;
+    }
     main {
         text-align: center;
         padding: 1em;
