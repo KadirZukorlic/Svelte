@@ -1,9 +1,29 @@
 <script>
-    import AutoFocus from "./components/AutoFocus.svelte";
+    import TabA from './components/TabA.svelte'
+    import TabB from './components/TabB.svelte'
+    import TabC from './components/TabC.svelte'
+
+    let activeTab = TabA
+
+    const handleActiveTab = (tab) => {
+        activeTab = tab
+    }
 </script>
 
 <main>
-    <AutoFocus />
+    <button on:click={() => handleActiveTab(TabA)}>Tab A</button>
+    <button on:click={() => handleActiveTab(TabB)}>Tab B</button>
+    <button on:click={() => handleActiveTab(TabC)}>Tab C</button>
+    <svelte:component this={activeTab} />
+    <!-- {#if activeTab === 'TabA'}
+        <TabA />
+    {/if}
+    {#if activeTab === 'TabB'}
+        <TabB />
+    {/if}
+    {#if activeTab === 'TabC'}
+        <TabC />
+    {/if} -->
 </main>
 
 <style>
