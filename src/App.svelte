@@ -1,9 +1,9 @@
 <script>
-    import PostList from './components/PostList.svelte'
+    import AutoFocus from "./components/AutoFocus.svelte";
 </script>
 
 <main>
-    <PostList />
+    <AutoFocus />
 </main>
 
 <style>
