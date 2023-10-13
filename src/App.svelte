@@ -1,15 +1,17 @@
 <script>
-    import Decrement from './components/StoreComponents/Decrement.svelte'
-    import Display from './components/StoreComponents/Display.svelte'
-    import Increment from './components/StoreComponents/Increment.svelte'
-    import Reset from './components/StoreComponents/Reset.svelte'
+    // import Decrement from './components/StoreComponents/Decrement.svelte'
+    // import Display from './components/StoreComponents/Display.svelte'
+    // import Increment from './components/StoreComponents/Increment.svelte'
+    // import Reset from './components/StoreComponents/Reset.svelte'
+    import Timer from './components/StoreComponents/Timer.svelte'
 </script>
 
 <main>
-    <Increment />
+    <Timer />
+    <!-- <Increment />
     <Decrement />
     <Reset />
-    <Display />
+    <Display /> -->
 </main>
 
 <style>
