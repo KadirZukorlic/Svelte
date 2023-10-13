@@ -1,4 +1,5 @@
 <script context="module">
+    // variables defined in context="module" script doesn't re-render the component
     let totalCount = 0
 
     export const getTotalCount = () => {
